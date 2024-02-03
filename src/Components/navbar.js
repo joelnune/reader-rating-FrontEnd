@@ -11,6 +11,7 @@ import './navbar.css'
 import Search from '../img/search.svg'
 import Logo from '../img/book-logo.png'
 import { useState } from 'react';
+
 function ColorSchemesExample() {
   const [book, setBook] = useState('');
 
@@ -24,7 +25,7 @@ function ColorSchemesExample() {
 }
   return (
     <>
-      <Navbar bg="light" data-bs-theme="light">
+      <Navbar>
         <Container>
             <img src={Logo} className='logo'/>       
           <Navbar.Brand href="#home">ReaderRating</Navbar.Brand>
