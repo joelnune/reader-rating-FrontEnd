@@ -1,0 +1,33 @@
+.card{
+    width: 20rem;
+    height: 72vh;
+    float: left;
+    margin: 25px 25px 0px 25px;
+    border-color: #a36e38;
+    background-color: #F0E7DE;
+    padding-top: 10px;
+}
+.card-img-bottom{
+    width:  10vw;
+    margin: auto;
+    height: 28vh;
+}
+.list-group-flush list-group{
+    background-color: #F0E7DE;
+}
+
+.button-group{
+    display: grid;
+grid-auto-flow: column;
+grid-column-gap: 10px;
+margin: 0;
+padding: 0;
+}
+
+button{
+align-items: center;
+}
+
+.love{
+    width: 20px;
+}
