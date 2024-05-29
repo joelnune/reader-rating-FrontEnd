@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { BookContext } from '../../Contexts/bookcontext';
 import Card from '../../Components/card/card'
-import './body.css'
+import './home.css'
 export default function BodyComponent(props) {
   const { books } = useContext(BookContext)
 

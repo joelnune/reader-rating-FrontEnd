@@ -1,8 +1,8 @@
 
 import './App.css';
 import NavbarComponent from './Components/navbar/navbar.js';
-import BodyComponent from './Components/body/body.js';
-import BookDetails from './pages/bookDetails.js'
+import BodyComponent from './pages/home/home.js';
+import BookDetails from './pages/bookDetails/bookDetails.js'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { BookContextProvidder } from './Contexts/bookcontext.js';
 
