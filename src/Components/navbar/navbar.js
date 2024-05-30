@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './navbar.css'
 import Search from '../../img/search.svg'
 import Logo from '../../img/book-logo.png'
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { BookContext } from '../../Contexts/bookcontext';
 import axios from 'axios';
 
@@ -17,12 +17,29 @@ function NavBarComponent() {
   const { setBooks } = useContext(BookContext) //contexto
   const [book, setBook] = useState()
 
+  useEffect(() => {
+    let initialConfig = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: `https://www.googleapis.com/books/v1/volumes?q=friederich+nietzsche`,
+      headers: {}
+    };
+    axios.request(initialConfig)
+    .then((response) => {
+      console.log(response.data);
+      setBooks(response.data.items)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[]);
+
   function handleChange(e) {
     setBook(e.target.value);
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    let config = {
+      let config = {
       method: 'get',
       maxBodyLength: Infinity,
       url: `https://www.googleapis.com/books/v1/volumes?q=${book}`,

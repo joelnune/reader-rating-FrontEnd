@@ -8,7 +8,6 @@ import './card.css'
 export default function CardComponent({ book }) {
  // console.log(book);
  const navigate = useNavigate()
- const data = { name: 'John Doe', age: 25 }
   if (book.volumeInfo)
     return (
         
