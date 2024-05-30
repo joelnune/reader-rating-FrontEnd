@@ -5,20 +5,20 @@ import BodyComponent from './pages/home/home.js';
 import BookDetails from './pages/bookDetails/bookDetails.js'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { BookContextProvidder } from './Contexts/bookcontext.js';
-
+import Login from './pages/login/login.js';
 function App() {
   return (
     <div className="App">
-        <header className="App-header">
           <BookContextProvidder>
               <BrowserRouter>
                 <Routes>
                 <Route path="/" element={<><NavbarComponent/> <BodyComponent/> </>} />
                 <Route path="/details" element={<BookDetails/>} />
+                <Route path="/login" element={<Login/>} />
                 </Routes>
               </BrowserRouter>
           </BookContextProvidder>
-         </header>
+        
       
     </div>
   );

@@ -1,0 +1,54 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+background: rgb(47,55,66);
+background: linear-gradient(174deg, rgba(47,55,66,1) 49%, rgba(207,151,64,1) 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container{
+    width: 83vw;
+    height: 83vh;
+    display: flex;
+    align-items: center;   
+}
+
+
+.login-box{
+    width: 40%;
+    background-color: #f8f8f8;
+    height: 100%;
+   
+}
+
+.left-box{
+    width: 60%;
+    height: 100%;
+    background-image: url(../../img/book-background.jpeg);
+    background-size: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+}
+
+.image{
+    height: 60%;
+}
+
+.container-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15%;
+}
+
+.title-container{
+    padding-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
