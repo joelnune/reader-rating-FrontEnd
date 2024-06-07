@@ -11,8 +11,8 @@ export default function CardComponent({ book }) {
   if (book.volumeInfo)
     return (
         
-        <Card>  
-          <Card.Img onClick={()=>{navigate('/details', {state: book})}} variant='bottom' src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"} />
+        <Card onClick={()=>{navigate('/details', {state: book})}}>  
+          <Card.Img  variant='bottom' src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"} />
         
             <Card.Body>
             <Card.Title>{book.volumeInfo.title.slice(0,50)}</Card.Title>

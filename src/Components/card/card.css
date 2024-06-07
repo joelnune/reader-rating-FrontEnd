@@ -4,9 +4,18 @@
     float: left;
     margin: 25px 25px 0px 25px;
     border-color: #754f3d;
-    background-color: #c2a087;
+    background-color: #efdfbb; 
     padding-top: 10px;
 }
+.card:hover{
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
 .card-img-bottom{
     width:  10vw;
     margin: auto;
@@ -19,7 +28,7 @@
 }
 
 .button-group{
-    display: grid;
+display: grid;
 grid-auto-flow: column;
 grid-column-gap: 10px;
 margin: 0;
