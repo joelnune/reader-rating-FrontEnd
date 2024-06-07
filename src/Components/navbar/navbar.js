@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './navbar.css'
 import Search from '../../img/search.svg'
-import Logo from '../../img/book-logo.png'
+import bookLogo from '../../img/book-logo.png'
 import { useContext, useState, useEffect } from 'react';
 import { BookContext } from '../../Contexts/bookcontext';
 import axios from 'axios';
@@ -59,7 +59,7 @@ function NavBarComponent() {
     <>
       <Navbar>
         <Container>
-          <img src={Logo} className='logo' />
+          <img src={bookLogo} className='navbar-logo' />
           <Navbar.Brand href="#home">ReaderRating</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
