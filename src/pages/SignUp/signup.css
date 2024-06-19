@@ -20,13 +20,13 @@ background: linear-gradient(174deg, rgba(47,55,66,1) 49%, rgba(207,151,64,1) 100
     width: 35%;
     background-color: #f8f8f8;
     height: 100%;
-    
+   
 }
 
-.left-box{
+.left-box-signup{
     width: 65%;
     height: 100%;
-    background-image: url(../../img/book-background.jpeg);
+    background-image: url(../../img/signup-background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -46,7 +46,7 @@ background: linear-gradient(174deg, rgba(47,55,66,1) 49%, rgba(207,151,64,1) 100
 }
 
 .title-container{
-    padding-top: 7vh;
+    padding-top: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,18 +88,17 @@ background: linear-gradient(174deg, rgba(47,55,66,1) 49%, rgba(207,151,64,1) 100
   .button-container{
     display:flex;
     justify-content: center;
-    padding-top: 2vh;
+    padding-top: 3vh;
   }
 
-  .signup{
-  display: flex;
-  justify-content: center;
-  margin-top: 4vh;
+  .login{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+    
+    }
   
-  }
-
-  .signup p ins
-  {
-    cursor: pointer;
-  }
-
+    .login p ins
+    {
+      cursor: pointer;
+    }

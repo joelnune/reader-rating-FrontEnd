@@ -1,27 +1,29 @@
 import React from 'react';
 import { useState } from 'react';
-import './login.css'
+import './signup.css'
+import Background from '../../img/signup-background.jpeg'
 import Logo from '../../img/logo.png'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function SignUp() {
   
-
 const [values, setValues] = useState(
-  {userEmail:"", passwd:""}
+  {userEmail:"",userName:"", passwd:""}
 );
 
 const navigate = useNavigate()
 
 const handleSubmit = async (e)=> {
   e.preventDefault()
+  
   try {
-   const response = await axios.post(`http://${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/login`, values)
+   const response = await axios.post(`http://${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/signup`, values)
    if(response.data.auth = true){
-    navigate('/')
+    localStorage.setItem('token', JSON.stringify(response.data.token))
+    navigate('/login')
    }
    else{
     alert("WRONG EMAIL OR PASSWORD")
@@ -37,7 +39,7 @@ const handleSubmit = async (e)=> {
     <div className="background">
       <div className='main-container'>
         
-        <div className='left-box'>
+        <div className='left-box-signup'>
       
         </div>
 
@@ -47,8 +49,8 @@ const handleSubmit = async (e)=> {
             <img src={Logo} className='logo'/>
           </div>
           <div className="title-container">  
-            <h2>Welcome</h2>
-            <h3>Sign in to your account</h3>
+          <h2>Create your account</h2>
+            
           </div>
           
           <div className='container-form'>
@@ -60,13 +62,20 @@ const handleSubmit = async (e)=> {
                   We'll never share your email with anyone else.
                   </Form.Text>
               </Form.Group>
+              <Form.Group className="mb-3" controlId=''>
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control type="text" placeholder="Enter your username" className="formControl" value={values.userName} onChange={(e) => setValues({...values,userName: e.target.value})} />
+    
+              </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" className="formControl"  value={values.passwd} onChange={(e) => setValues({...values,passwd: e.target.value})} />
+                  <Form.Text id="passwordHelpBlock" muted>
+                  Your password must be 8-20 characters long, contain letters and numbers.
+                  </Form.Text>
+  
                 </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
+              
               <div className='button-container'>
               <Button variant="outline-secondary" type="submit" className='buttonSubmit'>
                 <img src="https://cdn-icons-png.flaticon.com/512/154/154346.png"/> 
@@ -74,8 +83,8 @@ const handleSubmit = async (e)=> {
               </div>
             </Form>
           </div>
-          <div className='signup'> 
-          <p onClick={ ()=>navigate('/signup')} > Do not have an account? <ins> Sign Up </ins></p>
+          <div className='login'> 
+          <p onClick={ ()=>navigate('/login')} > Already have an account? <ins> Sign In </ins></p>
           </div>
         </div>
 
@@ -83,5 +92,5 @@ const handleSubmit = async (e)=> {
     </div>
   );
 }
-export default Login
+export default SignUp
 
