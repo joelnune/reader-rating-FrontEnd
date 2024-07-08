@@ -1,0 +1,33 @@
+.star-rating {
+    display: flex;
+    direction: row;
+    margin-bottom: 2vh;
+  }
+  
+  .star-container {
+    cursor: pointer;
+    position: relative;
+    width: 30px; /* Adjust based on your design */
+    height: 30px;
+  }
+  
+  .star {
+    font-size: 30px; /* Adjust based on your design */
+    color: #d3d3d3;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .star.half-filled::before {
+    content: '★';
+    position: absolute;
+    color: gold;
+    width: 50%;
+    overflow: hidden;
+  }
+  
